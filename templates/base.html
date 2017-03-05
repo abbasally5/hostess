@@ -1,0 +1,22 @@
+<html>
+    <head>
+        {% block head %}
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+        <title></title>
+        {% endblock %} 
+    </head>
+    <body>
+        <div id="navBar">
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        
+    </body>
+</html>

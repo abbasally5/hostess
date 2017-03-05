@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Home</h1>
+
+    <table>
+        <tr>
+            <th>Subdomain Name</th>
+            <th>Status</th>
+        </tr>
+
+        {% for subdomain in subdomains %}
+        <tr>
+            <td><a href="http://{{ subdomain.name }}.{{ ip }}">{{ subdomain.name }}</a></td>
+            <td>{{ subdomain.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/subdomain" method="post">
+        <input type="text" name="subdomain_name" value="" placeholder="Enter name of subdomain">
+        <button type="submit">Add Subdomain</button>
+    </form>
+{% endblock %}
